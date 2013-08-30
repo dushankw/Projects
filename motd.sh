@@ -3,7 +3,7 @@
 # Written for Debian/Ubuntu
 # dushankw - http://dushan.it
 
-# This script allows you to customise the SSH MOTD
+# This script changes the SSH MOTD to my liking
 # Install "update-motd" with "sudo apt-get install update-motd"
 # Delete the contents of /etc/update-motd.d/ then copy this file there
 # Set permissions "chmod 700 <filename>"
