@@ -7,7 +7,7 @@
 # Install "update-motd" with "sudo apt-get install update-motd"
 # Delete the contents of /etc/update-motd.d/ then copy this file there
 # Set permissions "chmod 700 <filename>"
-# Wait a few mins fot the update-motd cronjob to pick it up
+# Wait a few mins for the update-motd cronjob to pick it up
 # Log out and then SSH in again, you will see the new MOTD
 
 echo ""
