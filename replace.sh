@@ -1,28 +1,12 @@
 #!/bin/bash
 
-##############################################################
-# Script to replace all occurrences of a word in a text file #
-# Written by Dushan (http://dushan.it)                       #
-##############################################################
+# Written by dushankw (http://dushan.it)
+# Usage: ./replace.sh <input file> <search term> <replace term>
 
-# Inputs
-echo "Enter File Name:"
-read fname
-echo "Enter Search Term:"
-read sterm
-echo "Enter Replace Term:"
-read rterm
-
-# Logic
-if [ -e $fname ]
+if [ -e $1 ]
 then
-    sed "s/$sterm/$rterm/g" $fname > out
-    echo ""
-    echo "Success"
-    echo "Output File: out" 
-    echo "Written To: `pwd`"
+    sed "s/$2/$3/g" $1 > out
+    rm -rf $1 && mv out $1
 else
-    echo ""
-    echo "Error"
-    echo "Input file does not exist"
+    echo "Error: Input file does not exist"
 fi
