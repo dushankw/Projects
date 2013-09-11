@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Written for Debian/Ubuntu
 # dushankw - http://dushan.it
