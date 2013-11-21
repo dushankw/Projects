@@ -6,6 +6,9 @@
 # Number of times to ping each address, change if needed
 count=1
 
+# Location of Ping Binary
+ping=/bin/ping
+
 # Inputs and checks
 start()
 {
