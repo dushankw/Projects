@@ -12,7 +12,7 @@ make install
 1: SSH into the iWeb Machine (ssh iweb1.cs.rmit.edu.au)
 2: Kill your current Apache Process (pkill httpd)
 3: Navigate to your home folder (cd /iweb/$USER)
-4: Get the source (wget <url here>)
+4: Get the Digest source code (wget https://raw.github.com/dushankw/scripts/master/wswt/mod_auth_digest.c --no-check-certificate)
 5: Navigate to the bin folder (cd /iweb/$USER/<yourapachefolder>/bin)
 6: Run the following command (./apxs -i -a -c /iweb/$USER/mod_auth_digest.c)
 7: Start Apache (./apachectl startssl)
@@ -20,7 +20,7 @@ make install
 ===== Generate Password File =====
 
 1: Navigate to the bin folder (cd /iweb/$USER/<yourapachefolder>/bin)
-2: Run the following command (./htdigest -c /iweb/$USER/apache2/conf/pass_file <realm> <username>)
+2: Run the following command (./htdigest -c /iweb/$USER/<yourapachefolder>/conf/pass_file <realm> <username>)
 
 ===== Example Config for httpd.conf =====
 
@@ -28,7 +28,7 @@ make install
     AuthType Digest
     AuthName "<realm>"
     AuthDigestDomain /path/to/folder/we/want/to/protect/
-    AuthDigestFile /iweb/<username>/apache2/conf/pass_file
+    AuthDigestFile /iweb/<username>/<yourapachefolder>/conf/pass_file
     Require valid-user
 </Location>
 
