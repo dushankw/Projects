@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# I did not write this script, I just made minor fixes, Dushan
+
 # --------------------------------------------------------------------
 # An Openbox pipemenu for use with Dropbox and CrunchBang Linux.
 # Written for CrunchBang Linux <http://crunchbanglinux.org/>
@@ -33,11 +35,11 @@ if [ "$1" = "--install-dropbox" ]; then
     platform=`uname -m | tr '[A-Z]' '[a-z]'`
     case $platform in
     "x86_64")
-        # URL Fixed - Dushan
+        # URL Fixed (Added HTTPS Scheme) - Dushan
         DROPBOXURL="https://www.dropbox.com/download?plat=lnx.x86_64"
         ;;
     *)
-        # URL Fixed - Dushan
+        # URL Fixed (Added HTTPS Scheme) - Dushan
         DROPBOXURL="https://www.dropbox.com/download?plat=lnx.x86"
         ;;
     esac
