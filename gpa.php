@@ -8,7 +8,6 @@
             {
                 if(is_numeric($val) == true && $val >= 0)
                 {
-                    
                     return floor($val);
                 }
                 else
