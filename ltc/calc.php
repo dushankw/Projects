@@ -3,8 +3,7 @@
     // Get JSON Data from BTC-E
     function get($url)
     {
-        $feed = file_get_contents($url);
-        return json_decode($feed, true);
+        return json_decode(file_get_contents($url), true);
     }
 
     // Check for valid inputs and sanitise
