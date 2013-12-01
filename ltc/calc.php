@@ -52,6 +52,8 @@
     $POWER_LTC = truncate($POWER_COST / $LTC_USD_LAST, 8);
     $TOTAL_LTC_TO_SHARE = $LTC_THIS_WEEK - $POWER_LTC;
 
+    // To Do: Use Associative Array for each person instead?
+    
     // Adrian
     $ADRIAN_LTC = truncate($TOTAL_LTC_TO_SHARE / 4, 8);
     $ADRIAN_USD = round(($ADRIAN_LTC * $LTC_USD_LAST),2);
