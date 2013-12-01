@@ -17,12 +17,12 @@
             }
             else
             {
-                die("Input Error");
+                die("Input Error"); //Fix Me
             }
         }
         else
         {
-            die("Input Error");
+            die("Input Error"); //Fix Me
         }
     }
     
