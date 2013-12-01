@@ -29,7 +29,7 @@
     
     // Truncate BTC/LTC Value to 8 places without rounding
     // truncate($value, places)
-    function truncate($val, $f="0")
+    function truncate($val, $f)
     {
         if(($p = strpos($val, '.')) !== false)
         {
