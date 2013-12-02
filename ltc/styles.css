@@ -1,0 +1,24 @@
+body {
+    font-family:arial;
+    text-align:center;
+}
+
+#content { 
+    overflow:auto; 
+    width: 100%; 
+} 
+
+#left, #right { 
+    align: right;
+    width: 50%; 
+    background: white; 
+} 
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#left  { float:left;  }
+#right { float:right; } 
+#records { clear:both; }
