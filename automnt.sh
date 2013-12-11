@@ -8,7 +8,7 @@
 # EG: You only want to mount the work Samba shares when you're on the work LAN
 
 # Include it in your .bashrc so it runs on every login
-# EG: "include /path/to/pfmnt.sh"
+# EG: "include /path/to/script"
 
 INTERFACE="wlan0" #Change if needed
 BROADCAST=`ifconfig $INTERFACE | grep 'Bcast:' | cut -d: -f3 | awk '{print $1}'`
