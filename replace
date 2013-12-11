@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Written by dushankw (http://dushan.it)
-# Usage: ./replace.sh <input file> <search term> <replace term>
+# Usage: ./replace <input file> <search term> <replace term>
 
 if [ -e $1 ]
 then
