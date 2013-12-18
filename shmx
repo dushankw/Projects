@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "MX Record(s) for $1 are:"
+dig $1 +short MX # Print the MX records
+dig `dig $1 +short MX` +short A # Resolve each MX record into an IP
