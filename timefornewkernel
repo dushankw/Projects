@@ -1,0 +1,10 @@
+#!/bin/bash
+
+MYKERNEL=`uname -r`
+LATEST=`lynx -dump https://en.wikipedia.org/wiki/Linux_kernel | grep "Latest stable release" | awk '{print $4}'`
+
+# Format the output of uname -r to include just the Kernel version number
+IFS='-' read -a OUTPUT <<< "${MYKERNEL}"
+
+echo "Installed Kernel ${OUTPUT[0]}"
+echo "Newest Kernel $LATEST"
