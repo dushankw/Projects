@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $UID -ne  0 ] ; then
+    echo "You must run me as root..."
+else 
+    if [ "$1" == "wifiup" ] ; then
+        ifconfig wlan0 up
+        wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -D wext 2> /dev/null
+        dhclient wlan0
+    elif [ "$1" == "ethup" ] ; then
+        ifconfig eth0 up
+        dhclient eth0
+    elif [ "$1" == "wifidown" ] ; then
+        dhclient -r wlan0
+        ifconfig wlan0 down
+        pkill wpa_supplicant
+    elif [ "$1" == "ethdown" ] ; then
+        dhclient -r eth0
+        ifconfig eth0 down
+    else
+        echo "Usage ./netman wifiup|ethup|wifidown|ethdown"
+    fi
+fi
