@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# http://dushan.it
+# Usage ./pw <length>
+
+cat /dev/urandom | base64 | head -1 | cut -c1-$1
