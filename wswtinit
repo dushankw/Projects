@@ -14,7 +14,7 @@ if [ "$ACTIVE_SHELL" == "tcsh" ] ; then
     if [ $confirmation == "yes" ] ; then
         sed '/^setenv PATH*/d' /home/stud/$USER/.cshrc > .tempcshrc
         mv .cshrc .cshrc.old && mv .tempcshrc .cshrc
-        echo "setenv PATH "/bin:/etc:/usr/local/bin:/usr/openwin/bin:/usr/bin:/opt/SUNWspro/bin:/usr/ccs/bin:/usr/ucb:/usr/sbin/"" >> .cshrc
+        echo "setenv PATH "/bin:/etc:/usr/local/bin:/usr/openwin/bin:/usr/bin:/opt/SUNWspro/bin:/usr/ccs/bin:/usr/ucb:/usr/sbin/:/iweb/$USER/apache2/bin/"" >> .cshrc
         echo "It worked, you must now log out and log back in for the changes to become active"
     else
         echo "Goodbye..."
