@@ -13,7 +13,7 @@
 INTERFACE="wlan0" #Change if needed
 BROADCAST=`ifconfig $INTERFACE | grep 'Bcast:' | cut -d: -f3 | awk '{print $1}'`
 TARGETLAN="<Broadcast Address of network containing the shares>" # EG: 192.168.0.255 for a /24
-SERVER="<IP Of File Server>"
+SERVER="<IP of File Server>"
 SHARE="<Name of Share>"
 LOCATION="<Local Mount Point>" # EG: /mnt/files
 USER="<Username for File Server>"
