@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>RMIT GPA Calculator</title>
+        <style>
+            body {
+                font-family:arial;
+            }
+            .t1 {
+                margin-bottom:0;
+            }
+            .t2 {
+                margin-top:0;
+            }
+        </style>
+        <script type = "text/javascript">
+            function validate(val) { 
+                if(val != "" && isNaN(val) == false && val >= 0) {
+                    val.trim();
+                    return Math.floor(val);
+                } else {
+                    return false;
+                }
+            }
+
+            function gpa() {
+                var hd = validate(document.getElementById("hd").value);
+                var di = validate(document.getElementById("di").value);
+                var cr = validate(document.getElementById("cr").value);
+                var pa = validate(document.getElementById("pa").value);
+                var units = validate(document.getElementById("units").value);
+                var gpa = "Input Error: Either you left a field blank or entered an illegal value";
+
+                if(hd && di && cr && pa && units) {
+                    if((hd + di + cr + pa) == units) {
+                        gpa = (((hd * 48) + (di * 36) + (cr * 24) + (pa * 12)) / (units * 12)).toFixed(2);
+                    } else {
+                        gpa = "Logic Error: Your number of credits does not equal your total number of units";
+                    }
+                }
+
+                document.getElementById("output").innerHTML = gpa;
+            }
+
+            function cls() {
+                document.getElementById("output").innerHTML = "";
+                document.getElementById("hd").value = "";
+                document.getElementById("di").value = "";
+                document.getElementById("cr").value = "";
+                document.getElementById("pa").value = "";
+                document.getElementById("units").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class = "t1">RMIT GPA Calculator</h1>
+        <p class = "t2">Written by Dushan (<a href = "http://dushan.it">http://dushan.it</a>)</p>
+        <!-- Source of GPA Data: http://www.rmit.edu.au/students/gradingbasis/gpa#n04 -->
+        <h3 id = "output"></h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Number of HD grades:</td>
+                    <td><input type = "text" id = "hd" /></td>
+                </tr>
+                <tr>
+                    <td>Number of DI grades:</td>
+                    <td><input type = "text" id = "di" /></td>
+                </tr>
+                <tr>
+                    <td>Number of CR grades:</td>
+                    <td><input type = "text" id = "cr" /></td>
+                </tr>
+                <tr>
+                    <td>Number of PA grades:</td>
+                    <td><input type = "text" id = "pa" /></td>
+                </tr>
+                <tr>
+                    <td>Number of Units Taken:</td>
+                    <td><input type = "text" id = "units" /></td>
+                </tr>
+            </table>
+            <br />
+            <input type = "button" onClick = "gpa();" value = "Calculate" />
+            <input type = "button" onClick = "cls();" value = "Reset" />
+        </form>
+    </body>
+</html>
