@@ -10,8 +10,7 @@ count=1
 ping=/bin/ping
 
 # Inputs and checks
-start()
-{
+start() {
     echo "Enter an IP Address and Subnet Mask"
     echo "EG: 10.0.0.1 255.255.255.0"
     read ip snm
@@ -51,8 +50,7 @@ start()
 }
 
 # Work out network class and filter out invalid SNM
-checkClass()
-{
+checkClass() {
     case $snm in
         255.0.0.0) classA ;;
         255.255.0.0) classB ;;
@@ -62,8 +60,7 @@ checkClass()
 }
 
 # Ping the Class A
-classA()
-{
+classA() {
     for a in {0..255}
     do
         for b in {0..255}
@@ -77,8 +74,7 @@ classA()
 }
 
 # Ping the Class B
-classB()
-{
+classB() {
     for a in {0..255}
     do
         for b in {0..254}
@@ -89,8 +85,7 @@ classB()
 }
 
 # Ping the Class C
-classC()
-{
+classC() {
     for a in {1..254}
     do
         ping -c $count ${IPARRAY[0]}.${IPARRAY[1]}.${IPARRAY[2]}.$a
