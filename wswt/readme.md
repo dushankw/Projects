@@ -1,4 +1,4 @@
-WSWT Digest Code & Instructions
+WSWT
 =======
 
-Kept for posterity, you want to use the Goanna link
+Various resources for my WSWT class.
