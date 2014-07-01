@@ -27,12 +27,13 @@
                 var di = validate(document.getElementById("di").value);
                 var cr = validate(document.getElementById("cr").value);
                 var pa = validate(document.getElementById("pa").value);
+                var nn = validate(document.getElementById("nn").value);
                 var units = validate(document.getElementById("units").value);
                 var gpa = "Input Error: Either you left a field blank or entered an illegal value";
 
-                if(hd && di && cr && pa && units) {
-                    if((hd + di + cr + pa) == units) {
-                        gpa = (((hd * 48) + (di * 36) + (cr * 24) + (pa * 12)) / (units * 12)).toFixed(2);
+                if(hd && di && cr && pa && (nn >= 0) && units) {
+                    if((hd + di + cr + pa + nn) == units) {
+                        gpa = (((hd * 48) + (di * 36) + (cr * 24) + (pa * 12) + (nn * 0)) / (units * 12)).toFixed(2);
                     } else {
                         gpa = "Logic Error: Your number of credits does not equal your total number of units";
                     }
@@ -47,6 +48,7 @@
                 document.getElementById("di").value = "";
                 document.getElementById("cr").value = "";
                 document.getElementById("pa").value = "";
+                document.getElementById("nn").value = "";
                 document.getElementById("units").value = "";
             }
         </script>
@@ -75,7 +77,11 @@
                     <td><input type = "text" id = "pa" /></td>
                 </tr>
                 <tr>
-                    <td>Number of Units Taken:</td>
+                    <td>Number of units failed:</td>
+                    <td><input type = "text" id = "nn" /></td>
+                </tr>
+                <tr>
+                    <td>Number of units taken:</td>
                     <td><input type = "text" id = "units" /></td>
                 </tr>
             </table>
