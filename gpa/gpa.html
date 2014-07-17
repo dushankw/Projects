@@ -31,7 +31,7 @@
                 var units = validate(document.getElementById("units").value);
                 var gpa = "Input Error: Either you left a field blank or entered an illegal value";
 
-                if(hd && di && cr && pa && (nn >= 0) && units) {
+                if((hd >= 0) && (di >= 0) && (cr >= 0) && (pa >= 0) && (nn >= 0) && (units >= 0)) {
                     if((hd + di + cr + pa + nn) == units) {
                         gpa = (((hd * 48) + (di * 36) + (cr * 24) + (pa * 12) + (nn * 0)) / (units * 12)).toFixed(2);
                     } else {
